@@ -1,3 +1,4 @@
+// Load Data from API
 const loadProducts = () => {
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
@@ -5,7 +6,6 @@ const loadProducts = () => {
     .then((data) => showProducts(data));
 };
 loadProducts();
-
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
@@ -30,6 +30,7 @@ const showProducts = (products) => {
   }
 };
 
+//showing  Price and rating modal
 const showDetails = (price, rating) => {
   document.getElementById("modal-body").innerHTML = `
        <div class='p-3'>
@@ -41,6 +42,7 @@ const showDetails = (price, rating) => {
   `;
 }
 
+// add to card item price and count total products
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
